@@ -1,0 +1,269 @@
+fileFormatVersion: 2
+guid: 4386a26564214c14899cfeafbdf81e75
+timeCreated: 1444972715
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Bip001
+    100004: Bip001 Footsteps
+    100006: Bip001 Head
+    100008: Bip001 HeadNub
+    100010: Bip001 L Calf
+    100012: Bip001 L Clavicle
+    100014: Bip001 L Finger0
+    100016: Bip001 L Finger01
+    100018: Bip001 L Finger0Nub
+    100020: Bip001 L Finger1
+    100022: Bip001 L Finger11
+    100024: Bip001 L Finger1Nub
+    100026: Bip001 L Finger2
+    100028: Bip001 L Finger21
+    100030: Bip001 L Finger2Nub
+    100032: Bip001 L Foot
+    100034: Bip001 L Forearm
+    100036: Bip001 L Hand
+    100038: Bip001 L Thigh
+    100040: Bip001 L Toe0
+    100042: Bip001 L Toe0Nub
+    100044: Bip001 L UpperArm
+    100046: Bip001 Neck
+    100048: Bip001 Pelvis
+    100050: Bip001 Prop1
+    100052: Bip001 Prop2
+    100054: Bip001 R Calf
+    100056: Bip001 R Clavicle
+    100058: Bip001 R Finger0
+    100060: Bip001 R Finger01
+    100062: Bip001 R Finger0Nub
+    100064: Bip001 R Finger1
+    100066: Bip001 R Finger11
+    100068: Bip001 R Finger1Nub
+    100070: Bip001 R Finger2
+    100072: Bip001 R Finger21
+    100074: Bip001 R Finger2Nub
+    100076: Bip001 R Foot
+    100078: Bip001 R Forearm
+    100080: Bip001 R Hand
+    100082: Bip001 R Thigh
+    100084: Bip001 R Toe0
+    100086: Bip001 R Toe0Nub
+    100088: Bip001 R UpperArm
+    100090: Bip001 Spine
+    100092: Bip001 Spine1
+    100094: Bone_Back_Acc
+    100096: Bone_Front_Acc
+    100098: Bone_L_Backskirt_01
+    100100: Bone_L_Backskirt_02
+    100102: Bone_L_Backskirt_03
+    100104: Bone_L_Backskirt_Root
+    100106: Bone_L_Frontskirt_01
+    100108: Bone_L_Frontskirt_02
+    100110: Bone_L_Frontskirt_03
+    100112: Bone_L_Frontskirt_Root
+    100114: Bone_L_skirt_01
+    100116: Bone_L_skirt_02
+    100118: Bone_L_skirt_03
+    100120: Bone_L_skirt_Root
+    100122: Bone_L_Upskirt_01
+    100124: Bone_L_Upskirt_02
+    100126: Bone_L_Upskirt_03
+    100128: Bone_L_Upskirt_04
+    100130: Bone_L_Upskirt_05
+    100132: Bone_L_Upskirt_Root
+    100134: Bone_Left_Shoulder
+    100136: Bone_R_Backskirt_01
+    100138: Bone_R_Backskirt_02
+    100140: Bone_R_Backskirt_03
+    100142: Bone_R_Backskirt_Root
+    100144: Bone_R_Frontskirt_01
+    100146: Bone_R_Frontskirt_02
+    100148: Bone_R_Frontskirt_03
+    100150: Bone_R_Frontskirt_Root
+    100152: Bone_R_skirt_01
+    100154: Bone_R_skirt_02
+    100156: Bone_R_skirt_03
+    100158: Bone_R_skirt_Root
+    100160: Bone_R_Upskirt_01
+    100162: Bone_R_Upskirt_02
+    100164: Bone_R_Upskirt_03
+    100166: Bone_R_Upskirt_04
+    100168: Bone_R_Upskirt_05
+    100170: Bone_R_Upskirt_Root
+    100172: Bone_Upskirt_01
+    100174: Bone_Upskirt_02
+    100176: Bone_Upskirt_Root
+    100178: fx_bottom
+    100180: fx_center
+    100182: fx_top
+    100184: fx_weapon_l
+    100186: fx_weapon_r
+    100188: movement
+    100190: orc_01
+    100192: weapon_center_l
+    100194: weapon_center_r
+    100196: weapon_l
+    100198: weapon_r
+    400000: //RootNode
+    400002: Bip001
+    400004: Bip001 Footsteps
+    400006: Bip001 Head
+    400008: Bip001 HeadNub
+    400010: Bip001 L Calf
+    400012: Bip001 L Clavicle
+    400014: Bip001 L Finger0
+    400016: Bip001 L Finger01
+    400018: Bip001 L Finger0Nub
+    400020: Bip001 L Finger1
+    400022: Bip001 L Finger11
+    400024: Bip001 L Finger1Nub
+    400026: Bip001 L Finger2
+    400028: Bip001 L Finger21
+    400030: Bip001 L Finger2Nub
+    400032: Bip001 L Foot
+    400034: Bip001 L Forearm
+    400036: Bip001 L Hand
+    400038: Bip001 L Thigh
+    400040: Bip001 L Toe0
+    400042: Bip001 L Toe0Nub
+    400044: Bip001 L UpperArm
+    400046: Bip001 Neck
+    400048: Bip001 Pelvis
+    400050: Bip001 Prop1
+    400052: Bip001 Prop2
+    400054: Bip001 R Calf
+    400056: Bip001 R Clavicle
+    400058: Bip001 R Finger0
+    400060: Bip001 R Finger01
+    400062: Bip001 R Finger0Nub
+    400064: Bip001 R Finger1
+    400066: Bip001 R Finger11
+    400068: Bip001 R Finger1Nub
+    400070: Bip001 R Finger2
+    400072: Bip001 R Finger21
+    400074: Bip001 R Finger2Nub
+    400076: Bip001 R Foot
+    400078: Bip001 R Forearm
+    400080: Bip001 R Hand
+    400082: Bip001 R Thigh
+    400084: Bip001 R Toe0
+    400086: Bip001 R Toe0Nub
+    400088: Bip001 R UpperArm
+    400090: Bip001 Spine
+    400092: Bip001 Spine1
+    400094: Bone_Back_Acc
+    400096: Bone_Front_Acc
+    400098: Bone_L_Backskirt_01
+    400100: Bone_L_Backskirt_02
+    400102: Bone_L_Backskirt_03
+    400104: Bone_L_Backskirt_Root
+    400106: Bone_L_Frontskirt_01
+    400108: Bone_L_Frontskirt_02
+    400110: Bone_L_Frontskirt_03
+    400112: Bone_L_Frontskirt_Root
+    400114: Bone_L_skirt_01
+    400116: Bone_L_skirt_02
+    400118: Bone_L_skirt_03
+    400120: Bone_L_skirt_Root
+    400122: Bone_L_Upskirt_01
+    400124: Bone_L_Upskirt_02
+    400126: Bone_L_Upskirt_03
+    400128: Bone_L_Upskirt_04
+    400130: Bone_L_Upskirt_05
+    400132: Bone_L_Upskirt_Root
+    400134: Bone_Left_Shoulder
+    400136: Bone_R_Backskirt_01
+    400138: Bone_R_Backskirt_02
+    400140: Bone_R_Backskirt_03
+    400142: Bone_R_Backskirt_Root
+    400144: Bone_R_Frontskirt_01
+    400146: Bone_R_Frontskirt_02
+    400148: Bone_R_Frontskirt_03
+    400150: Bone_R_Frontskirt_Root
+    400152: Bone_R_skirt_01
+    400154: Bone_R_skirt_02
+    400156: Bone_R_skirt_03
+    400158: Bone_R_skirt_Root
+    400160: Bone_R_Upskirt_01
+    400162: Bone_R_Upskirt_02
+    400164: Bone_R_Upskirt_03
+    400166: Bone_R_Upskirt_04
+    400168: Bone_R_Upskirt_05
+    400170: Bone_R_Upskirt_Root
+    400172: Bone_Upskirt_01
+    400174: Bone_Upskirt_02
+    400176: Bone_Upskirt_Root
+    400178: fx_bottom
+    400180: fx_center
+    400182: fx_top
+    400184: fx_weapon_l
+    400186: fx_weapon_r
+    400188: movement
+    400190: orc_01
+    400192: weapon_center_l
+    400194: weapon_center_r
+    400196: weapon_l
+    400198: weapon_r
+    4300000: orc_01
+    7400000: Take 001
+    11100000: //RootNode
+    13700000: orc_01
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 2
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
