@@ -28,14 +28,12 @@ public class PlayerMovement : MonoBehaviour
         StateProcess();
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log(Input.mousePosition);
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if(Physics.Raycast(ray, out hit, 999.0f, ClickMask))
             {
                 Target = hit.point;
                 ChangeState(STATE.NORMAL);
-                Debug.Log("Target : " + Target);
             }
         }
     }
@@ -49,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
         {
             case STATE.NORMAL:
                 {
-                    myNavAgent.stoppingDistance = 0.5f;
+                    myNavAgent.stoppingDistance = 1.0f;
 
                     break;
                 }
@@ -70,6 +68,16 @@ public class PlayerMovement : MonoBehaviour
         {
             case STATE.NORMAL:
                 {
+                    if (Target != Vector3.zero)
+                    {
+                        Vector3 dir = Target - transform.position;
+                        //dir.y = 0;  // 평면상으로만 이동하려고 y = 0 했다
+                        //dir.Normalize();
+                        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), Time.smoothDeltaTime * 3.0f);
+                    }
+
+                    Debug.Log(myNavAgent.velocity.magnitude / myNavAgent.speed);
+
                     myAnim.SetFloat("Speed", myNavAgent.velocity.magnitude / myNavAgent.speed);
                     myNavAgent.SetDestination(Target);
                     break;
