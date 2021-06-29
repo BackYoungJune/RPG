@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public NavMeshAgent myNavAgent;
     public Animator myAnim;
     public PlayerAnimEvent myAnimEvent;
+    public PlayerInput playerInput;
 
     public Vector3 Target;
 
@@ -23,12 +24,13 @@ public class PlayerMovement : MonoBehaviour
         myAnim = GetComponent<Animator>();
         myNavAgent = GetComponent<NavMeshAgent>();
         myAnimEvent = GetComponent<PlayerAnimEvent>();
+        playerInput = GetComponent<PlayerInput>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         StateProcess();
-        if (Input.GetMouseButtonDown(1))
+        if (playerInput.MouseRightButton)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
