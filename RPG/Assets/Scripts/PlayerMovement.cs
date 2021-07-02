@@ -9,18 +9,19 @@ public class PlayerMovement : MonoBehaviour
     {
         NORMAL, MOVE, BATTLE
     }
-    public STATE myState = STATE.NORMAL;
+    public STATE myState = STATE.NORMAL;    // 현재 상태를 나타내는 STATE
 
-    public LayerMask ClickMask;
-    public NavMeshAgent myNavAgent;
-    public Animator myAnim;
-    public PlayerAnimEvent myAnimEvent;
-    public PlayerInput playerInput;
+    public LayerMask ClickMask;             // 클릭하는 지점의 Layer
+    public NavMeshAgent myNavAgent;         // 플레이어 Navigation
+    public Animator myAnim;                 // 플레이어 애니메이션
+    public PlayerAnimEvent myAnimEvent;     // 플레이어 애님 이벤트
+    public PlayerInput playerInput;         // 플레이어 입력 감지 컴포넌트
 
-    public Vector3 Target;
+    public Vector3 Target;                  // 마우스 클릭지점 Vector3
 
     void Awake()
     {
+        // 사용할 컴포넌트들을 받아온다
         myAnim = GetComponent<Animator>();
         myNavAgent = GetComponent<NavMeshAgent>();
         myAnimEvent = GetComponent<PlayerAnimEvent>();
@@ -30,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         StateProcess();
+        // 마우스 우클릭을 했을경우
         if (playerInput.MouseRightButton)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -51,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
         {
             case STATE.NORMAL:
                 {
+                    // 플레이어 간격 제한
                     myNavAgent.stoppingDistance = 2.0f;
 
                     break;
@@ -68,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
         {
             case STATE.NORMAL:
                 {
+                    // 이동할 위치가 정해진경우 이동시킨다
                     if (Target != Vector3.zero)
                     {
                         Vector3 dir = Target - transform.position;
@@ -76,12 +80,14 @@ public class PlayerMovement : MonoBehaviour
                         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), Time.smoothDeltaTime * 4.0f);
                     }
 
+                    // 애니메이션 속도 셋팅
                     myAnim.SetFloat("Speed", myNavAgent.velocity.magnitude / myNavAgent.speed);
                     myNavAgent.SetDestination(Target);
                     break;
                 }
             case STATE.MOVE:
                 {
+                    // 애니메이션 속도 셋팅
                     myAnim.SetFloat("Speed", myNavAgent.velocity.magnitude / myNavAgent.speed);
                     myNavAgent.SetDestination(Target);
                     break;
