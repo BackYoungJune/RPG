@@ -97,20 +97,15 @@ public class PlayerAttack : MonoBehaviour
                 }
             case STATE.ATTACK:
                 {
-                    
+                    RaycastHit[] rayHits = Physics.SphereCastAll(transform.position, 10.0f, transform.forward, 10.0f, layerMask);
+                    foreach (RaycastHit hit in rayHits)
+                    {
+                        if(hit.transform.tag == "Enemy")
+                        {
+                            Debug.Log("Enemy");
+                        }
+                    }
 
-                    //// Physics.BoxCast (레이저를 발사할 위치, 사각형의 각 좌표의 절판 크기, 발사 방향, 충돌 결과, 회전 각도, 최대 거리)
-                    //RaycastHit hit;
-                    //Debug.DrawRay(transform.position, transform.forward * Attackrange, Color.blue, 0.3f);
-
-                    //if (Physics.Raycast(transform.position, transform.forward, out hit, Attackrange, layerMask))
-                    //{
-                    //    Debug.Log("1");
-                    //    if (hit.transform.tag == "Enemy")
-                    //    {
-                    //        Debug.Log("Attack");
-                    //    }
-                    //}
                     break;
                 }
             case STATE.SKILL:
@@ -119,27 +114,5 @@ public class PlayerAttack : MonoBehaviour
                 }
         }
     }
-
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-
-        // 함수 파라미터 : 현재 위치, Box의 절반 사이즈, Ray의 방향, RaycastHit 결과, Box의 회전값, BoxCast를 진행할 거리
-        if (true == Physics.BoxCast(transform.position, transform.lossyScale / 2.0f, transform.forward, out RaycastHit hit, transform.rotation, Attackrange))
-        {
-            // Hit된 지점까지 ray를 그려준다.
-            Debug.DrawRay(transform.position, transform.forward * hit.distance);
-
-            // Hit된 지점에 박스를 그려준다.
-            Gizmos.DrawWireCube(transform.position + transform.forward * hit.distance, transform.lossyScale);
-        }
-        else
-        {
-            // Hit가 되지 않았으면 최대 검출 거리로 ray를 그려준다.
-            Gizmos.DrawRay(transform.position, transform.forward * Attackrange);
-        }
-    }
-
-    
 
 }
