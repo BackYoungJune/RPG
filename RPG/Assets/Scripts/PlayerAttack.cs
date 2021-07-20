@@ -18,8 +18,8 @@ public class PlayerAttack : MonoBehaviour
     public float AttackTime;                // 공격 시간
     public int damage;                      // 공격 데미지
     public float Attackrange;               // 공격 범위
+    public float Attackradius;              // 공격 반경
 
-    
 
     private void Awake()
     {
@@ -37,19 +37,26 @@ public class PlayerAttack : MonoBehaviour
     private void FixedUpdate()
     {
         StateProcess();
-        //OnDrawGizmos();
     }
 
     public void OnAttack()
     {
-        // Player와 Enemy의 거리를 구함
-        //float distance = Vector3.Distance(myRangeSys.Target.position, transform.position);
-        //Vector3 dir = myRangeSys.Target.position - transform.position;
-        //Vector3.Dot(dir, transform.forward);
-        //// Player가 공격을 받을 시 일정 거리 이상 멀어지면 공격을 받지 않는다
-        //// 거리가 1.2f이하, 정면에 상대가 있을 경우
-        //if (distance < 1.2f && Vector3.Dot(dir, transform.forward) > 0)
-        //    myRangeSys.Target.GetComponent<LivingEntity>()?.OnDamage(damage, hitPoint, hitNormal);
+        RaycastHit[] rayHits = Physics.SphereCastAll(transform.position, Attackradius, transform.forward, Attackrange);
+        foreach (RaycastHit hit in rayHits)
+        {
+            if(hit.transform.gameObject.tag == "Enemy")
+            {
+                Debug.Log("Enemy");
+                float distance = Vector3.Distance(transform.position, hit.transform.position);
+                Vector3 dir = transform.position - hit.transform.position;
+                float dot = Vector3.Dot(dir, transform.forward);
+                if (distance < 11.0f && dot >= 0)
+                {
+                    Debug.Log("distance");
+                    hit.transform.GetComponent<LivingEntity>()?.OnDamage(damage, hit.point, hit.normal);
+                }
+            }
+        }
     }
 
     public void EndAttack()
@@ -72,7 +79,8 @@ public class PlayerAttack : MonoBehaviour
                 {
                     myAnim.SetTrigger("Attack");
                     damage = 20;
-                    Attackrange = 10.0f;
+                    Attackrange = 7.0f;
+                    Attackradius = 9.0f;
                     break;
                 }
             case STATE.SKILL:
@@ -97,14 +105,7 @@ public class PlayerAttack : MonoBehaviour
                 }
             case STATE.ATTACK:
                 {
-                    RaycastHit[] rayHits = Physics.SphereCastAll(transform.position, 10.0f, transform.forward, 10.0f, layerMask);
-                    foreach (RaycastHit hit in rayHits)
-                    {
-                        if(hit.transform.tag == "Enemy")
-                        {
-                            Debug.Log("Enemy");
-                        }
-                    }
+
 
                     break;
                 }
@@ -115,4 +116,24 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
+    void OnDrawGizmos()
+    {
+
+        //float maxDistance = 10;
+        RaycastHit hit;
+    // Physics.SphereCast (레이저를 발사할 위치, 구의 반경, 발사 방향, 충돌 결과, 최대 거리)
+    bool isHit = Physics.SphereCast(transform.position, Attackradius, transform.forward, out hit, Attackrange);
+
+    Gizmos.color = Color.red;
+        if (isHit)
+        {
+            Gizmos.DrawRay(transform.position, transform.forward* hit.distance);
+            Gizmos.DrawWireSphere(transform.position + transform.forward* hit.distance, Attackradius );
+}
+        else
+{
+    Gizmos.DrawRay(transform.position, transform.forward * Attackrange);
+}
+
+    }
 }
